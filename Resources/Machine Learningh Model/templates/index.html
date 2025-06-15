@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Birth Rate Form</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            color: #34568B;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #34568B;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2a3f63;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Birth Rate Form</h1>
+        <form action="/predict" method="POST">
+            <label>Gestation</label>
+            <input type="number" name="gestation">
+
+            <label>Parity</label>
+            <input type="number" name="parity">
+
+            <label>Age</label>
+            <input type="number" name="age">
+
+            <label>Height</label>
+            <input type="number" name="height">
+
+            <label>Weight</label>
+            <input type="number" name="weight">
+
+            <label>Smoke</label>
+            <input type="number" name="smoke">
+
+            <button type="submit">Predict Birth Weight</button>
+        </form>
+      <h3>Predicted Birth Rate: {{prediction}}</h3>
+
+    </div>
+</body>
+</html>
